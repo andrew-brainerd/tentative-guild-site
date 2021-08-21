@@ -1,21 +1,17 @@
-import logo from './logo.svg';
+import guildLogo from './guild-logo.png';
+import discordLogo from './discord-logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <div className="app">
+      <header>
+        <img src={guildLogo} className="guild-logo" alt="Guild Logo" />
+        <h1>
+          &lt;Tentative&gt;
+        </h1>
+        <a href="https://discord.gg/ZGnM9BxRNw" target="_blank" rel="noreferrer">
+          <img src={discordLogo} className="discord-logo" alt="Discord Logo" />
         </a>
       </header>
     </div>
