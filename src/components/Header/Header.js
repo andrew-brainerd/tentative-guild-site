@@ -18,6 +18,12 @@ const Header = () => {
         >
           Officers
         </Link>
+        <Link
+          to="/schedule"
+          className={styles.navItem}
+        >
+          Raid Schedule
+        </Link>
       </div>
     </header>
   );

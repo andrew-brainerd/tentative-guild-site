@@ -6,8 +6,9 @@ import {
 } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import Header from '../Header/Header';
-import Home from '../Home/Home';
 import Officers from '../Officers/Officers';
+import Schedule from '../Schedule/Schedule';
+import Home from '../Home/Home';
 import styles from './App.module.scss';
 
 export const history = createBrowserHistory();
@@ -18,8 +19,11 @@ const App = () => {
       <div className={styles.app}>
         <Header />
         <Switch>
-          <Route path="/officers">
+          <Route path="/officers" exact>
             <Officers />
+          </Route>
+          <Route path="/schedule" exact>
+            <Schedule />
           </Route>
           <Route path="/">
             <Home />
