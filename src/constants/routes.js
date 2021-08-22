@@ -3,6 +3,7 @@ import Home from '../components/Home/Home';
 import Officers from '../components/Officers/Officers';
 import Schedule from '../components/Schedule/Schedule';
 import Loot from '../components/Loot/Loot';
+import Contact from '../components/Contact/Contact';
 import homeIcon from '../img/home.svg';
 
 export default [
@@ -29,6 +30,12 @@ export default [
     path: '/loot',
     name: 'Loot System',
     Component: Loot,
+    canSelect: true
+  },
+  {
+    path: '/contact',
+    name: 'Contact Us',
+    Component: Contact,
     canSelect: true
   }
 ];

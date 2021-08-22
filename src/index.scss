@@ -1,3 +1,5 @@
+@import './styles/colors.scss';
+
 *,
 *::before,
 *::after {
@@ -6,7 +8,7 @@
 }
 
 body {
-  background-color: #282c34;
+  background-color: $darkGrey;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -21,13 +23,25 @@ code {
     monospace;
 }
 
+h1 {
+  font-size: 5vw;
+}
+
+a {
+  &:active,
+  &:link,
+  &:visited {
+    color: white;
+  }
+}
+
 .fadeAnimation-enter {
   opacity: 0;
 }
 
 .fadeAnimation-enter-active {
   opacity: 1;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .fadeAnimation-exit {
@@ -36,5 +50,5 @@ code {
 
 .fadeAnimation-exit-active {
   opacity: 0;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }

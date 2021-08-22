@@ -45,6 +45,12 @@ export default [
     img: raechPortrait
   },
   {
+    name: 'Ralblast',
+    race: 'Gnome',
+    class: 'Mage',
+    img: comingSoonPortrait
+  },
+  {
     name: 'Seckie',
     race: 'Human',
     class: 'Priest',

@@ -1,0 +1,38 @@
+@import '../../styles/colors.scss';
+
+.content {
+  min-height: 100vh;
+
+  hr {
+    margin-bottom: 50px;
+    width: 90%;
+  }
+
+  .contactOptions {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px auto;
+
+    .button {
+      align-items: center;
+      background: $yellow;
+      border: 5px solid $darkGrey;
+      border-radius: 10px;
+      color: $darkGrey;
+      cursor: pointer;
+      display: flex;
+      font-size: 30px;
+      justify-content: space-evenly;
+      padding: 10px 15px;
+      width: 300px;
+
+      &.selected {
+        border-color: white;
+      }
+
+      img {
+        width: 100px;
+      }
+    }
+  }
+}

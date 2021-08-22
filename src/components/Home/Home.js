@@ -1,5 +1,6 @@
 import React from 'react';
 import { isMobile } from 'react-device-detect';
+import { guildDiscordLink, guildWarcraftLogsLink } from '../../constants/links';
 import guildLogo from '../../img/guild-logo.png';
 import discordLogo from '../../img/discord-logo.svg';
 import warcraftLogsLogo from '../../img/warcraft-logs-logo.png';
@@ -7,18 +8,19 @@ import styles from './Home.module.scss';
 
 const Home = () => {
   return (
-    <section className={styles.content}>
+    <div className={styles.content}>
       <h1>
         &lt;Tentative&gt;
       </h1>
+      <h2>WoW Classic Guild</h2>
       <img
         className={styles.guildLogo}
         src={guildLogo}
         alt="Guild Logo"
       />
-      <section className={styles.guildButtons}>
+      <div className={styles.guildButtons}>
         <a
-          href="https://discord.gg/ZGnM9BxRNw"
+          href={guildDiscordLink}
           className={[
             styles.button,
             !isMobile ? styles.animate : ''
@@ -33,7 +35,7 @@ const Home = () => {
           />
         </a>
         <a
-          href="https://classic.warcraftlogs.com/guild/id/610120"
+          href={guildWarcraftLogsLink}
           className={[
             styles.button,
             styles.warcraftLogsButton,
@@ -49,8 +51,8 @@ const Home = () => {
           />
           <span className={styles.buttonText}>Warcraft Logs</span>
         </a>
-      </section>
-    </section>
+      </div>
+    </div>
   );
 };
 

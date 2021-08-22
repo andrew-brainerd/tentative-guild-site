@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import routes from '../../constants/routes';
 import Header from '../Header/Header';
+import ScrollToTop from '../ScrollToTop/ScrollToTop';
 import styles from './App.module.scss';
 
 const App = () => {
@@ -20,7 +21,9 @@ const App = () => {
                 unmountOnExit
               >
                 <div className='fadeAnimation'>
-                  <Component />
+                  <ScrollToTop>
+                    <Component />
+                  </ScrollToTop>
                 </div>
               </CSSTransition>
             )}

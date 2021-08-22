@@ -1,18 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  BrowserRouter as Router
-} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import WebFont from 'webfontloader';
 import App from './components/App/App';
 // import reportWebVitals from './reportWebVitals';
 import './index.scss';
 
+WebFont.load({
+  google: {
+    families: [
+      'Urbanist: 400'
+    ]
+  }
+});
+
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>,
+  <Router>
+    <App />
+  </Router>,
   document.getElementById('root')
 );
 
