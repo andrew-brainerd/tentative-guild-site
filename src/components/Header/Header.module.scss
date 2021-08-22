@@ -1,5 +1,5 @@
 header {
-  background: white;
+  background: #FFE17D;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
   height: 50px;
   left: 0;
@@ -17,9 +17,14 @@ header {
     .navItem {
       align-items: center;
       display: flex;
-      font-size: 2vw;
+      font-size: 24px;
       height: 100%;
       padding: 0 15px;
+      text-decoration: none;
+
+      &:active, &:link, &:visited {
+        color: black;
+      }
     }
   }
 }

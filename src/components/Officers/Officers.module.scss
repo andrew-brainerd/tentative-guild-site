@@ -1,0 +1,26 @@
+.officers {
+  .officer {
+    color: white;
+
+    h2 {
+      font-size: 4vw;
+    }
+
+    h3 {
+      font-size: 3vw;
+    }
+
+    .portrait {
+      img {
+        border: 2px solid white;
+        border-radius: 50%;
+        width: 30%;
+      }
+    }
+  }
+
+  hr {
+    margin: 50px auto;
+    width: 50%;
+  }
+}
