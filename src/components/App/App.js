@@ -1,15 +1,11 @@
 import { React } from 'react';
-import { useLocation, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import routes from '../../constants/routes';
 import Header from '../Header/Header';
 import styles from './App.module.scss';
 
 const App = () => {
-  const location = useLocation();
-
-  console.log('Key: ', location.key);
-
   return (
     <div className={styles.app}>
       <Header />

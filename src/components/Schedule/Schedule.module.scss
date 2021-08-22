@@ -1,10 +1,9 @@
-.schedule {
-  position: relative;
-  top: -100px;
-
-  iframe {
-    border: none;
-    height: 600;
-    width: 800;
+.content {
+  .schedule {
+    iframe {
+      border: none;
+      height: 600;
+      width: 800;
+    }
   }
 }

@@ -1,40 +1,26 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import homeIcon from '../../img/home.svg';
+import routes from '../../constants/routes';
 import styles from './Header.module.scss';
 
 const Header = () => {
   const { pathname } = useLocation();
 
-  console.log('Path', pathname);
-
   return (
     <header>
       <div className={styles.navigation}>
-        <Link
-          to="/"
-          className={styles.navItem}
-        >
-          <img src={homeIcon} alt="Home" />
-        </Link>
-        <Link
-          to="/officers"
-          className={[
-            styles.navItem,
-            pathname === '/officers' ? styles.selected : ''
-          ].join(' ')}
-        >
-          Officers
-        </Link>
-        <Link
-          to="/schedule"
-          className={[
-            styles.navItem,
-            pathname === '/schedule' ? styles.selected : ''
-          ].join(' ')}
-        >
-          Raid Schedule
-        </Link>
+        {routes.map(route => (
+          <Link
+            key={route.path}
+            to={route.path}
+            className={[
+              styles.navItem,
+              route.canSelect && pathname === route.path ? styles.selected : ''
+            ].join(' ')}
+          >
+            {route.icon || route.name}
+          </Link>
+        ))}
       </div>
     </header>
   );
