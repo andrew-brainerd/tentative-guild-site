@@ -1,43 +1,55 @@
+import React from 'react';
 import { isMobile } from 'react-device-detect';
 import Header from '../Header/Header';
 import guildLogo from '../../img/guild-logo.png';
 import discordLogo from '../../img/discord-logo.svg';
 import warcraftLogsLogo from '../../img/warcraft-logs-logo.png';
-import './App.css';
+import styles from './App.module.scss';
 
 const App = () => {
   return (
-    <div className="app">
+    <div className={styles.app}>
       <Header />
-      <section className="content">
-        <img src={guildLogo} className="guild-logo" alt="Guild Logo" />
+      <section className={styles.content}>
+        <img
+          className={styles.guildLogo}
+          src={guildLogo}
+          alt="Guild Logo" />
         <h1>
           &lt;Tentative&gt;
         </h1>
-        <section className="guild-buttons">
+        <section className={styles.guildButtons}>
           <a
             href="https://discord.gg/ZGnM9BxRNw"
             className={[
-              "button",
-              !isMobile ? "animate" : ""
+              styles.button,
+              !isMobile ? styles.animate : ''
             ].join(' ')}
             target="_blank"
             rel="noreferrer"
           >
-            <img src={discordLogo} className="discord-logo" alt="Discord Logo" />
+            <img
+              className={styles.discordLogo}
+              src={discordLogo}
+              alt="Discord Logo"
+            />
           </a>
           <a
             href="https://classic.warcraftlogs.com/guild/id/610120"
             className={[
-              "button",
-              "warcraft-logs-button",
-              !isMobile ? "animate" : ""
+              styles.button,
+              styles.warcraftLogsButton,
+              !isMobile ? styles.animate : ''
             ].join(' ')}
             target="_blank"
             rel="noreferrer"
           >
-            <img src={warcraftLogsLogo} className="warcraft-logs-logo" alt="Warcraft Logs Logo" />
-            <span className="button-text">Warcraft Logs</span>
+            <img
+              className={styles.warcraftLogsLogo}
+              src={warcraftLogsLogo}
+              alt="Warcraft Logs Logo"
+            />
+            <span className={styles.buttonText}>Warcraft Logs</span>
           </a>
         </section>
       </section>

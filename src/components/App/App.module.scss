@@ -1,0 +1,90 @@
+.app {
+  margin: auto;
+  max-width: 1000px;
+  text-align: center;
+
+  .content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .guildLogo {
+    max-width: 300px;
+  }
+  
+  .guildButtons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 25px;
+    width: 100%;
+  }
+  
+  .button {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .animate.button:hover {
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-7px);
+  }
+  
+  .discordLogo {
+    background: #5865F2;
+    border: 1px solid white;
+    border-radius: 20px;
+    height: 120px;
+    padding: 20px 30px;
+    width: 350px;
+  }
+  
+  .warcraftLogsButton {
+    align-items: center;
+    background: #001020;
+    border: 1px solid white;
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    font-size: 30px;
+    height: 120px;
+    justify-content: space-between;
+    padding: 20px 30px;
+    text-decoration: none;
+    width: 350px;
+  }
+  
+  .warcraftLogsButton img,
+  .warcraftLogsButton span {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .guildButtons {
+    flex-direction: column;
+  }
+
+  .warcraftLogsButton {
+    margin: 25px auto;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .guildLogo {
+    animation: pulse infinite 3s linear;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+}
