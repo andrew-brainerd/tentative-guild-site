@@ -9,16 +9,19 @@ const Officers = () => {
       <div className={styles.officers}>
         {officerList.map(officer => {
           return (
-            <>
-              <div className={styles.officer} key={officer.name}>
+            <div key={officer.name}>
+              <div className={styles.officer}>
                 <div className={styles.portrait}>
                   <img src={officer.img} alt={officer.name} />
                 </div>
+                {officer.name === 'Techanalyst' ? (
+                  <h3>Guild Master</h3>
+                ) : null}
                 <h2>{officer.name}</h2>
                 <h3>{officer.race} {officer.class}</h3>
               </div>
               <hr />
-            </>
+            </div>
           );
         })}
       </div>

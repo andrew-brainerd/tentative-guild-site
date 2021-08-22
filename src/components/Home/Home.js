@@ -8,14 +8,14 @@ import styles from './Home.module.scss';
 const Home = () => {
   return (
     <section className={styles.content}>
+      <h1>
+        &lt;Tentative&gt;
+      </h1>
       <img
         className={styles.guildLogo}
         src={guildLogo}
         alt="Guild Logo"
       />
-      <h1>
-        &lt;Tentative&gt;
-      </h1>
       <section className={styles.guildButtons}>
         <a
           href="https://discord.gg/ZGnM9BxRNw"

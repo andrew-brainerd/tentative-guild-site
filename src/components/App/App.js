@@ -1,36 +1,37 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+import { React } from 'react';
+import { useLocation, Route } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
+import routes from '../../constants/routes';
 import Header from '../Header/Header';
-import Officers from '../Officers/Officers';
-import Schedule from '../Schedule/Schedule';
-import Home from '../Home/Home';
 import styles from './App.module.scss';
 
-export const history = createBrowserHistory();
-
 const App = () => {
+  const location = useLocation();
+
+  console.log('Key: ', location.key);
+
   return (
-    <Router history={history}>
-      <div className={styles.app}>
-        <Header />
-        <Switch>
-          <Route path="/officers" exact>
-            <Officers />
+    <div className={styles.app}>
+      <Header />
+      <div className={styles.content}>
+        {routes.map(({ path, Component }) => (
+          <Route key={path} exact path={path}>
+            {({ match }) => (
+              <CSSTransition
+                in={match != null}
+                timeout={300}
+                classNames='fadeAnimation'
+                unmountOnExit
+              >
+                <div className='fadeAnimation'>
+                  <Component />
+                </div>
+              </CSSTransition>
+            )}
           </Route>
-          <Route path="/schedule" exact>
-            <Schedule />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        ))}
       </div>
-    </Router>
+    </div>
   );
 };
 

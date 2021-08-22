@@ -6,7 +6,7 @@ const Schedule = () => {
     <div className={styles.schedule}>
       <iframe
         src="https://calendar.google.com/calendar/embed?src=dqjne4hjpnkuankuf00csaph80%40group.calendar.google.com&ctz=America%2FDetroit"
-        width="800"
+        width="90%"
         height="600"
         frameBorder="0"
         scrolling="auto"

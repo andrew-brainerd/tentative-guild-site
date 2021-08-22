@@ -1,5 +1,7 @@
+@import '../../styles/colors.scss';
+
 header {
-  background: #FFE17D;
+  background: $yellow;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
   height: 50px;
   left: 0;
@@ -18,12 +20,37 @@ header {
       align-items: center;
       display: flex;
       font-size: 24px;
-      height: 100%;
-      padding: 0 15px;
+      padding: 15px;
       text-decoration: none;
+      transition: all 0.3s ease;
 
-      &:active, &:link, &:visited {
-        color: black;
+      &:active,
+      &:link,
+      &:visited {
+        color: #282c34;
+      }
+
+      &.selected {
+        background: $darkGrey;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        color: white;
+        margin-top: 10px;
+        padding: 10px 15px 10px 15px;
+      }
+
+      img {
+        width: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header {
+    .navigation {
+      .navItem {
+        font-size: 18px;
       }
     }
   }

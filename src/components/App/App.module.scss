@@ -2,4 +2,14 @@
   margin: auto;
   max-width: 1000px;
   text-align: center;
+
+  .content {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    top: 50px;
+  }
 }

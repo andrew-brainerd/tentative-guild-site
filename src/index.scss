@@ -20,3 +20,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.fadeAnimation-enter {
+  opacity: 0;
+}
+
+.fadeAnimation-enter-active {
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+.fadeAnimation-exit {
+  opacity: 1;
+}
+
+.fadeAnimation-exit-active {
+  opacity: 0;
+  transition: all 0.3s;
+}
