@@ -37,7 +37,12 @@ const SuggestionForm = () => {
           <form onSubmit={handleSubmit}>
             <div className={styles.fieldContainer}>
               <Field name="name">
-                {fieldProps => <TextInput label="Name" {...fieldProps} />}
+                {fieldProps =>
+                  <TextInput
+                    label="Name" {...fieldProps}
+                    style={{ maxWidth: '300px' }}
+                  />
+                }
               </Field>
             </div>
             <div className={styles.fieldContainer}>
@@ -45,7 +50,7 @@ const SuggestionForm = () => {
                 {fieldProps => (
                   <TextInput
                     label="Suggestion"
-                    style={{ width: '500px' }}
+                    style={{ maxWidth: '500px' }}
                     multiline
                     {...fieldProps}
                   />

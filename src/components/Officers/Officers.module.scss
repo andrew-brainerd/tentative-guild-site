@@ -1,3 +1,5 @@
+@import '../../styles/sizing.scss';
+
 .content {
   min-height: 100vh;
 
@@ -25,6 +27,22 @@
     hr {
       margin: 50px auto;
       width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: $minPageWidth) {
+  .content {
+    .officers {
+      .officer {
+        h2 {
+          font-size: 26px;
+        }
+
+        h3 {
+          font-size: 24px;
+        }
+      }
     }
   }
 }

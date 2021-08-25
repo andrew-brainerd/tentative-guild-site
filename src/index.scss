@@ -1,4 +1,5 @@
 @import './styles/colors.scss';
+@import './styles/sizing.scss';
 
 *,
 *::before,
@@ -15,7 +16,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-width: 375px;
+  min-width: $minPageWidth;
+  position: relative;
+  width: 100%;
 }
 
 code {
@@ -51,4 +54,10 @@ a {
 .fadeAnimation-exit-active {
   opacity: 0;
   transition: all 0.3s ease;
+}
+
+@media screen and (max-width: $minPageWidth) {
+  h1 {
+    font-size: 28px;
+  }
 }

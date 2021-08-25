@@ -8,7 +8,7 @@ const StyledTextInput = styled(TextField)({
   background: '#e8f0fe',
   display: 'flex',
   marginRight: '25px',
-  width: '300px'
+  width: '100%'
 });
 
 const TextInput = ({ input, meta, ...props }) => {

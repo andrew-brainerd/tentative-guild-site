@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '../../styles/sizing.scss';
 
 .content {
   align-items: center;
@@ -79,6 +80,12 @@
   .warcraftLogsButton {
     margin: 25px auto;
   }
+}
+
+@media screen and (max-width: $minPageWidth) {
+   .content {
+     top: 25px;
+   }
 }
 
 @media (prefers-reduced-motion: no-preference) {

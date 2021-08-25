@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '../../styles/sizing.scss';
 
 .suggestionForm {
   border-radius: 20px;
@@ -6,16 +7,31 @@
   margin: 0 auto;
   width: 75%;
 
-  .fieldContainer {
-    display: flex;
-    margin-bottom: 25px;
-  }
+  form {
+    width: 100%;
 
-  .successText {
-    animation: fadeIn 1s;
-    color: $successGreen;
-    margin-bottom: 20px;
-    text-align: left; 
+
+    .fieldContainer {
+      display: flex;
+      margin-bottom: 25px;
+    }
+
+    .successText {
+      animation: fadeIn 1s;
+      color: $successGreen;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+  }
+}
+
+@media screen and (max-width: $minPageWidth) {
+  .suggestionForm {
+    width: 90%;
+
+    .fieldContainer {
+      width: 100%;
+    }
   }
 }
 

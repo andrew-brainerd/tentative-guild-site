@@ -11,42 +11,98 @@ header {
   z-index: 1;
 
   .navigation {
-    align-items: center;
-    display: flex;
     height: 100%;
-    padding: 0 15px;
 
-    .navItem {
-      align-items: center;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      display: flex;
+    .hamburger {
+      cursor: pointer;
       font-size: 24px;
-      padding: 15px;
-      text-decoration: none;
-      transition: all 0.3s;
+      left: 15px;
+      position: absolute;
+      top: 10px;
+      user-select: none;
+    }
 
-      &:active,
-      &:link,
-      &:visited {
-        color: #282c34;
+    .hidden {
+      display: none;
+    }
+
+    nav {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      padding: 0 15px;
+
+      &.mobile {
+        background: $yellow;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        left: 0;
+        padding: 0 15px 15px 15px;
+        position: absolute;
+        top: 50px;
+        width: 100%;
       }
 
-      &.selected {
-        background: $darkGrey;
-        color: white;
-        margin-top: 10px;
-        padding: 10px 15px 10px 15px;
-      }
+      .navItem {
+        align-items: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        display: flex;
+        font-size: 24px;
+        padding: 15px;
+        text-decoration: none;
+        transition: all 0.3s;
 
-      img {
-        width: 30px;
+        &:active,
+        &:link,
+        &:visited {
+          color: #282c34;
+        }
+
+        &.mobile {
+          display: block;
+
+          &.selected {
+            background: $darkGrey;
+            border-radius: 10px;
+            color: white;
+            margin-top: 0;
+            padding: 15px;
+          }
+        }
+
+        &.hidden {
+          display: none;
+        }
+
+        &.selected {
+          background: $darkGrey;
+          color: white;
+          margin-top: 10px;
+          padding: 10px 15px 10px 15px;
+        }
+
+        img {
+          width: 30px;
+        }
       }
     }
   }
 }
 
-@media screen and (max-width: 615px) {
+@media screen and (max-width: 675px) {
+  header {
+    .navigation {
+      .navItem {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
   header {
     .navigation {
       .navItem {
