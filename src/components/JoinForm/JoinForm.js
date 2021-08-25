@@ -1,27 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Field } from 'react-final-form';
-import { styled } from '@material-ui/core/styles';
 import { addPlayer } from '../../api/recruitment';
-import TextField from '@material-ui/core/TextField';
-import styles from './JoinForm.module.scss';
+import TextInput from '../TextInput/TextInput';
 import YellowButton from '../YellowButton/YellowButton';
-
-const TextInput = styled(TextField)({
-  background: '#e8f0fe',
-  display: 'flex',
-  marginRight: '25px',
-  width: '300px'
-});
+import styles from './JoinForm.module.scss';
 
 const JoinForm = () => {
-  const onSubmit = values => {
-    addPlayer(values).then(response => {
-      console.log(response);
+  const [successMessage, setSuccessMessage] = useState(null);
+
+  const onSubmit = (values, form) => {
+    addPlayer(values).then(() => {
+      setSuccessMessage('Application submitted. You will hear from an officer soon!');
+      setTimeout(() => {
+        form.initialize({});
+        setTimeout(() => setSuccessMessage(null), 100);
+      }, 5000);
     });
   };
 
-  const validate = () => {
+  const validate = ({ toonName, toonRace, toonClass, toonSpec }) => {
+    const errors = {};
 
+    if (!toonName) {
+      errors.toonName = 'Name is required';
+    }
+
+    if (!toonRace) {
+      errors.toonRace = 'Race is required';
+    }
+
+    if (!toonClass) {
+      errors.toonClass = 'Class is required';
+    }
+
+    if (!toonSpec) {
+      errors.toonSpec = 'Spec is required';
+    }
+
+    return errors;
   };
 
   return (
@@ -33,62 +49,34 @@ const JoinForm = () => {
           <form onSubmit={handleSubmit}>
             <div className={styles.fieldContainer}>
               <Field name="toonName">
-                {({ input }) => (
-                  <TextInput
-                    name={input.name}
-                    value={input.value}
-                    onChange={input.onChange}
-                    label="Name"
-                    variant="filled"
-                  />
-                )}
+                {fieldProps => <TextInput label="Name" {...fieldProps} />}
               </Field>
             </div>
             <div className={styles.fieldContainer}>
               <Field name="toonRace" className={styles.toonRace}>
-                {({ input }) => (
-                  <TextInput
-                    name={input.name}
-                    value={input.value}
-                    onChange={input.onChange}
-                    label="Race"
-                    variant="filled"
-                  />
-                )}
+                {fieldProps => <TextInput label="Race" {...fieldProps} />}
               </Field>
               <Field name="toonClass" className={styles.toonClass}>
-                {({ input }) => (
-                  <TextInput
-                    name={input.name}
-                    value={input.value}
-                    onChange={input.onChange}
-                    label="Class"
-                    variant="filled"
-                  />
-                )}
+                {fieldProps => <TextInput label="Class" {...fieldProps} />}
               </Field>
             </div>
             <div className={styles.fieldContainer}>
               <Field name="toonSpec" className={styles.toonSpec}>
-                {({ input }) => (
-                  <TextInput
-                    name={input.name}
-                    value={input.value}
-                    onChange={input.onChange}
-                    label="Spec"
-                    variant="filled"
-                  />
-                )}
+                {fieldProps => <TextInput label="Spec" {...fieldProps} />}
               </Field>
             </div>
+            {successMessage && (
+              <div className={styles.successText}>
+                {successMessage}
+              </div>
+            )}
             <div className={styles.fieldContainer}>
               <Field name="submit" className={styles.submit}>
                 {() => (
                   <YellowButton
                     type="submit"
                     variant="contained"
-                    color="primary"
-                    disabled={submitting || pristine}
+                    disabled={submitting || pristine || !!successMessage}
                   >
                     Submit
                   </YellowButton>

@@ -9,10 +9,22 @@
   .fieldContainer {
     display: flex;
     margin-bottom: 25px;
+  }
 
-    .error {
-      background: $darkGrey;
-      margin: 0;
-    }
+  .successText {
+    animation: fadeIn 1s;
+    color: $successGreen;
+    margin-bottom: 20px;
+    text-align: left; 
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

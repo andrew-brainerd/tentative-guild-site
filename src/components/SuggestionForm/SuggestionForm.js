@@ -1,18 +1,9 @@
 import React, { useState } from 'react';
 import { Form, Field } from 'react-final-form';
-import { styled } from '@material-ui/core/styles';
 import { addSuggestion } from '../../api/feedback';
-import TextField from '@material-ui/core/TextField';
+import TextInput from '../TextInput/TextInput';
 import YellowButton from '../YellowButton/YellowButton';
-
 import styles from './SuggestionForm.module.scss';
-
-const TextInput = styled(TextField)({
-  background: '#e8f0fe',
-  display: 'flex',
-  marginRight: '25px',
-  width: '300px'
-});
 
 const SuggestionForm = () => {
   const [successMessage, setSuccessMessage] = useState(null);
@@ -22,8 +13,8 @@ const SuggestionForm = () => {
       setSuccessMessage('Suggestion submitted! Thank you for your feedback');
       setTimeout(() => {
         form.initialize({});
-        setSuccessMessage(null);
-      }, 10000);
+        setTimeout(() => setSuccessMessage(null), 100);
+      }, 5000);
     });
   };
 
@@ -46,35 +37,17 @@ const SuggestionForm = () => {
           <form onSubmit={handleSubmit}>
             <div className={styles.fieldContainer}>
               <Field name="name">
-                {({ input }) => (
-                  <TextInput
-                    name={input.name}
-                    value={input.value}
-                    onChange={input.onChange}
-                    label="Name"
-                    variant="filled"
-                  />
-                )}
+                {fieldProps => <TextInput label="Name" {...fieldProps} />}
               </Field>
             </div>
             <div className={styles.fieldContainer}>
               <Field name="suggestion">
-                {({ input, meta }) => (
+                {fieldProps => (
                   <TextInput
-                    name={input.name}
-                    value={input.value}
-                    onChange={input.onChange}
                     label="Suggestion"
-                    variant="filled"
-                    multiline
                     style={{ width: '500px' }}
-                    error={meta.touched && !!meta.error}
-                    helperText={meta.touched && meta.error}
-                    FormHelperTextProps={{
-                      classes: {
-                        error: styles.error
-                      }
-                    }}
+                    multiline
+                    {...fieldProps}
                   />
                 )}
               </Field>
