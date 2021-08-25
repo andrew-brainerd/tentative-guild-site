@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import HttpsRedirect from 'react-https-redirect';
 import WebFont from 'webfontloader';
 import App from './components/App/App';
 // import reportWebVitals from './reportWebVitals';
@@ -15,9 +16,11 @@ WebFont.load({
 });
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <HttpsRedirect>
+    <Router>
+      <App />
+    </Router>
+  </HttpsRedirect>,
   document.getElementById('root')
 );
 

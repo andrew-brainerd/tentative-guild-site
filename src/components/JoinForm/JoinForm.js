@@ -1,10 +1,10 @@
 import React from 'react';
 import { Form, Field } from 'react-final-form';
 import { styled } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import { addPlayer } from '../../api/recruitment';
+import TextField from '@material-ui/core/TextField';
 import styles from './JoinForm.module.scss';
+import YellowButton from '../YellowButton/YellowButton';
 
 const TextInput = styled(TextField)({
   background: '#e8f0fe',
@@ -84,14 +84,14 @@ const JoinForm = () => {
             <div className={styles.fieldContainer}>
               <Field name="submit" className={styles.submit}>
                 {() => (
-                  <Button
+                  <YellowButton
                     type="submit"
                     variant="contained"
                     color="primary"
                     disabled={submitting || pristine}
                   >
                     Submit
-                  </Button>
+                  </YellowButton>
                 )}
               </Field>
             </div>

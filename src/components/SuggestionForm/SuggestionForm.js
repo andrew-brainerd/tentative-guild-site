@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import { styled } from '@material-ui/core/styles';
 import { addSuggestion } from '../../api/feedback';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import YellowButton from '../YellowButton/YellowButton';
+
 import styles from './SuggestionForm.module.scss';
 
 const TextInput = styled(TextField)({
@@ -14,14 +15,26 @@ const TextInput = styled(TextField)({
 });
 
 const SuggestionForm = () => {
-  const onSubmit = values => {
-    addSuggestion(values).then(response => {
-      console.log(response);
+  const [successMessage, setSuccessMessage] = useState(null);
+
+  const onSubmit = (values, form) => {
+    addSuggestion(values).then(() => {
+      setSuccessMessage('Suggestion submitted! Thank you for your feedback');
+      setTimeout(() => {
+        form.initialize({});
+        setSuccessMessage(null);
+      }, 10000);
     });
   };
 
-  const validate = () => {
+  const validate = ({ suggestion }) => {
+    const errors = {};
 
+    if (!suggestion) {
+      errors.suggestion = 'Suggestion is required';
+    }
+
+    return errors;
   };
 
   return (
@@ -46,7 +59,7 @@ const SuggestionForm = () => {
             </div>
             <div className={styles.fieldContainer}>
               <Field name="suggestion">
-                {({ input }) => (
+                {({ input, meta }) => (
                   <TextInput
                     name={input.name}
                     value={input.value}
@@ -55,21 +68,32 @@ const SuggestionForm = () => {
                     variant="filled"
                     multiline
                     style={{ width: '500px' }}
+                    error={meta.touched && !!meta.error}
+                    helperText={meta.touched && meta.error}
+                    FormHelperTextProps={{
+                      classes: {
+                        error: styles.error
+                      }
+                    }}
                   />
                 )}
               </Field>
             </div>
+            {successMessage && (
+              <div className={styles.successText}>
+                {successMessage}
+              </div>
+            )}
             <div className={styles.fieldContainer}>
               <Field name="submit" className={styles.submit}>
                 {() => (
-                  <Button
+                  <YellowButton
                     type="submit"
                     variant="contained"
-                    color="primary"
-                    disabled={submitting || pristine}
+                    disabled={submitting || pristine || !!successMessage}
                   >
                     Submit
-                  </Button>
+                  </YellowButton>
                 )}
               </Field>
             </div>

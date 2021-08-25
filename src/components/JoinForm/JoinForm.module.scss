@@ -1,3 +1,5 @@
+@import '../../styles/colors.scss';
+
 .joinForm {
   border-radius: 20px;
   display: flex;
@@ -7,5 +9,10 @@
   .fieldContainer {
     display: flex;
     margin-bottom: 25px;
+
+    .error {
+      background: $darkGrey;
+      margin: 0;
+    }
   }
 }
