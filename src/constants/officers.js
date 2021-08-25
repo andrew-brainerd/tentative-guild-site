@@ -1,4 +1,4 @@
-// import techPortrait from '../img/techanalyst.png';
+// import techPortrait from '../img/tech.png';
 // import beefPortrait from '../img/beef.png';
 // import daddyPortrait from '../img/daddy.png';
 // import harbPortrait from '../img/harbeson.png';

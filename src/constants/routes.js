@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from '../components/Home/Home';
+import About from '../components/About/About';
 import Officers from '../components/Officers/Officers';
 import Schedule from '../components/Schedule/Schedule';
 import Loot from '../components/Loot/Loot';
@@ -14,6 +15,12 @@ export default isMobile => {
       Component: Home,
       icon: <img src={homeIcon} alt="Home" />,
       canSelect: isMobile
+    },
+    {
+      path: '/about',
+      name: 'About Us',
+      Component: About,
+      canSelect: true
     },
     {
       path: '/officers',
