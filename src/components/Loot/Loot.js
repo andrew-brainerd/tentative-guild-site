@@ -7,9 +7,9 @@ const Loot = () => {
       <h1>Our Loot System</h1>
       <div className={styles.loot}>
         <h2>10 Man Raids</h2>
-        <p>Single SR, then MS &gt; OS</p>
+        <h3>Single SR, then MS &gt; OS</h3>
         <h2>25 Man Raids</h2>
-        <p>Single SR, then MS &gt; OS</p>
+        <h3>MS &gt; OS</h3>
       </div>
     </div>
   );
