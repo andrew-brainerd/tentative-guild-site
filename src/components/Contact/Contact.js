@@ -1,20 +1,10 @@
 import React, { useState } from 'react';
-import { guildDiscordLink } from '../../constants/links';
+import DiscordLink from '../DiscordLink/DiscordLink';
 import SuggestionForm from '../SuggestionForm/SuggestionForm';
 import JoinForm from '../JoinForm/JoinForm';
 import suggestionImg from '../../img/suggestion.svg';
 import joinImg from '../../img/join.svg';
 import styles from './Contact.module.scss';
-
-const DiscordLink = () => (
-  <a
-    href={guildDiscordLink}
-    target="_blank"
-    rel="noreferrer"
-  >
-    guild Discord
-  </a>
-);
 
 const Contact = () => {
   const [isShowingSuggetionBox, showSuggestionBox] = useState(false);
@@ -24,7 +14,7 @@ const Contact = () => {
     <div className={styles.content}>
       <h1>Contact Us</h1>
       <div className={styles.contact}>
-        <h3>Always feel free to message any of our officers in-game or through the <DiscordLink /></h3>
+        <h3>Always feel free to message any of our officers in-game or through the guild <DiscordLink /></h3>
         <div className={styles.contactOptions}>
           <div
             className={[
