@@ -16,7 +16,7 @@ WebFont.load({
 });
 
 ReactDOM.render(
-  <HttpsRedirect>
+  <HttpsRedirect disabled={process.env.NODE_ENV === 'development'}>
     <Router>
       <App />
     </Router>

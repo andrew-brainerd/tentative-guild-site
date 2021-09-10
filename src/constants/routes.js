@@ -4,6 +4,7 @@ import About from '../components/About/About';
 import Officers from '../components/Officers/Officers';
 import Schedule from '../components/Schedule/Schedule';
 import Loot from '../components/Loot/Loot';
+import Addons from '../components/Addons/Addons';
 import Contact from '../components/Contact/Contact';
 import homeIcon from '../img/home.svg';
 
@@ -38,6 +39,12 @@ export default isMobile => {
       path: '/loot',
       name: 'Loot System',
       Component: Loot,
+      canSelect: true
+    },
+    {
+      path: '/addons',
+      name: 'Addons',
+      Component: Addons,
       canSelect: true
     },
     {

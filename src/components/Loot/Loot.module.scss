@@ -1,7 +1,11 @@
+@import '../../styles/sizing.scss';
+
 .content {
   min-height: 100vh;
 
   .loot {
+    padding-bottom: 100px;
+
     h2 {
       font-size: 4vw;
       text-decoration: underline;
@@ -9,10 +13,39 @@
 
     h3 {
       font-size: 3vw;
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      font-size: 2vw;
+      font-style: italic;
+      margin-top: 0;
     }
 
     p {
       font-size: 2vw;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .content {
+    .loot {
+      h2 {
+        font-size: 32px;
+      }
+
+      h3 {
+        font-size: 26px;
+      }
+
+      h4 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 22px;
+      }
     }
   }
 }

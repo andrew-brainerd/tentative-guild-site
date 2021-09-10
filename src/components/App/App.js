@@ -15,7 +15,7 @@ const App = () => {
           <Route key={path} exact path={path}>
             {({ match }) => (
               <CSSTransition
-                in={match != null}
+                in={match !== null}
                 timeout={300}
                 classNames='fadeAnimation'
                 unmountOnExit
