@@ -21,18 +21,6 @@ export default [
     img: comingSoonPortrait
   },
   {
-    name: 'DaddyDTown',
-    race: 'Human',
-    class: 'Paladin',
-    img: comingSoonPortrait
-  },
-  {
-    name: 'Harbeson',
-    race: 'Dwarf',
-    class: 'Warrior',
-    img: comingSoonPortrait
-  },
-  {
     name: 'Nordana',
     race: 'Human',
     class: 'Paladin',
@@ -43,17 +31,5 @@ export default [
     race: 'Draenei',
     class: 'Hunter',
     img: raechPortrait
-  },
-  {
-    name: 'Ralblast',
-    race: 'Gnome',
-    class: 'Mage',
-    img: comingSoonPortrait
-  },
-  {
-    name: 'Seckie',
-    race: 'Human',
-    class: 'Priest',
-    img: comingSoonPortrait
   }
 ];
