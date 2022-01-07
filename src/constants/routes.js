@@ -2,6 +2,7 @@ import React from 'react';
 import Home from '../components/Home/Home';
 import About from '../components/About/About';
 import Officers from '../components/Officers/Officers';
+import Roster from '../components/Roster/Roster';
 import Schedule from '../components/Schedule/Schedule';
 import Loot from '../components/Loot/Loot';
 import Addons from '../components/Addons/Addons';
@@ -27,6 +28,12 @@ export default isMobile => {
       path: '/leadership',
       name: 'Leadership',
       Component: Officers,
+      canSelect: true
+    },
+    {
+      path: '/roster',
+      name: 'Roster',
+      Component: Roster,
       canSelect: true
     },
     {

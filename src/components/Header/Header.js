@@ -43,7 +43,7 @@ const Header = ({ isMobile }) => {
 };
 
 const mapSizesToProps = ({ width }) => ({
-  isMobile: width < 675
+  isMobile: width < 875
 });
 
 Header.propTypes = {
