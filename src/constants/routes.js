@@ -24,8 +24,8 @@ export default isMobile => {
       canSelect: true
     },
     {
-      path: '/officers',
-      name: 'Officers',
+      path: '/leadership',
+      name: 'Leadership',
       Component: Officers,
       canSelect: true
     },

@@ -1,10 +1,6 @@
-// import techPortrait from '../img/tech.png';
-// import beefPortrait from '../img/beef.png';
-// import daddyPortrait from '../img/daddy.png';
-// import harbPortrait from '../img/harbeson.png';
-// import nordPortrait from '../img/nordana.png';
+import techPortrait from '../img/techanalyst.png';
 import raechPortrait from '../img/raech.png';
-// import seckiePortrait from '../img/seckie.png';
+import stanPortrait from '../img/standarsho.png';
 import comingSoonPortrait from '../img/coming-soon.svg';
 
 export default [
@@ -12,24 +8,42 @@ export default [
     name: 'Techanalyst',
     race: 'Human',
     class: 'Mage',
-    img: comingSoonPortrait
+    img: techPortrait,
+    title: 'Guild Master'
   },
   {
-    name: 'Beef',
+    name: 'Abortio',
     race: 'Gnome',
     class: 'Warlock',
-    img: comingSoonPortrait
+    img: comingSoonPortrait,
+    title: 'Officer'
   },
   {
-    name: 'Nordana',
+    name: 'Amandus',
+    race: 'Human',
+    class: 'Priest',
+    img: comingSoonPortrait,
+    title: 'Officer'
+  },
+  {
+    name: 'Mortablockin',
     race: 'Human',
     class: 'Paladin',
-    img: comingSoonPortrait
+    img: comingSoonPortrait,
+    title: 'Officer'
   },
   {
     name: 'Raech',
     race: 'Draenei',
     class: 'Hunter',
-    img: raechPortrait
+    img: raechPortrait,
+    title: 'Officer'
+  },
+  {
+    name: 'Standarsho',
+    race: 'Human',
+    class: 'Paladin',
+    img: stanPortrait,
+    title: 'Officer'
   }
 ];

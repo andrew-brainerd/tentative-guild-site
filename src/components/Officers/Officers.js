@@ -5,19 +5,17 @@ import styles from './Officers.module.scss';
 const Officers = () => {
   return (
     <div className={styles.content}>
-      <h1>Our Officers</h1>
+      <h1>Our Leadership</h1>
       <div className={styles.officers}>
         {officerList.map(officer => {
           return (
             <div key={officer.name}>
               <div className={styles.officer}>
+                <h2>{officer.name}</h2>
                 <div className={styles.portrait}>
                   <img src={officer.img} alt={officer.name} />
                 </div>
-                {officer.name === 'Techanalyst' ? (
-                  <h3>Guild Master</h3>
-                ) : null}
-                <h2>{officer.name}</h2>
+                <h3>{officer.title}</h3>
                 <h3>{officer.race} {officer.class}</h3>
               </div>
               <hr />
