@@ -41,6 +41,7 @@ const Roster = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [roster, setRoster] = useState([]);
   const [filteredList, setFilteredList] = useState(null);
+  const [sort, setSort] = useState({ column: 'name', isSortedAsc: true });
 
   useEffect(() => {
     getGuild().then(({ guild }) => {
@@ -61,6 +62,8 @@ const Roster = () => {
       setFilteredList(null);
     }
   };
+
+  const updateSorting = column => setSort({ column, isSortedAsc: !sort.isSortedAsc });
 
   return (
     <div className={styles.roster}>
@@ -99,11 +102,11 @@ const Roster = () => {
                 {m !== 0 && (member.isOnline ? 'Online' : 'Offline')}
                 {m === 0 && ''}
               </div> */}
-                  <div className={styles.class}>{member.class}</div>
-                  <div className={styles.level}>{member.level}</div>
+                  <div className={styles.class} onClick={() => updateSorting('class')}>{member.class}</div>
+                  <div className={styles.level} onClick={() => updateSorting('level')}>{member.level}</div>
                   {/* <div className={styles.zone}>{member.zone}</div> */}
-                  <div className={styles.rank}>{member.rank}</div>
-                  <div className={styles.epgp}>
+                  <div className={styles.rank} onClick={() => updateSorting('rank')}>{member.rank}</div>
+                  <div className={styles.pr} onClick={() => updateSorting('pr')}>
                     {getLootPriority(member.level, member.officerNote)}
                   </div>
                   <div className={styles.gear}>
