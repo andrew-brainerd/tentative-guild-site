@@ -1,6 +1,6 @@
 import techPortrait from '../img/techanalyst.png';
 import raechPortrait from '../img/raech.png';
-// import comingSoonPortrait from '../img/coming-soon.svg';
+import comingSoonPortrait from '../img/coming-soon.svg';
 
 export default [
   {
@@ -11,10 +11,24 @@ export default [
     title: 'Guild Master'
   },
   {
+    name: 'Derukk',
+    race: 'Human',
+    class: 'Warrior',
+    img: comingSoonPortrait,
+    title: 'Officer'
+  },
+  {
+    name: 'Nuclearkiwi',
+    race: 'Human',
+    class: 'Priest',
+    img: comingSoonPortrait,
+    title: 'Officer'
+  },
+  {
     name: 'Raech',
     race: 'Draenei',
     class: 'Hunter',
     img: raechPortrait,
-    title: 'Senior Officer'
+    title: 'Officer'
   }
 ];
